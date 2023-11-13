@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Prototype.Topdown{
@@ -8,7 +7,11 @@ namespace Prototype.Topdown{
 		[SerializeField] public Transform target;
 
 
-		
+		private void Update(){
+			if(!target) return;
+			
+		}
+
 		private GameObject GetCloseScale(){
 			float minDot = 0;
 			GameObject closeScale = null;
