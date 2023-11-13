@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Prototype/Puffer-Prototype.unity
+    path: Assets/Prototype/Bounce/Puffer-Prototype.unity
     guid: 7a856993bd06ad94ca7e505fcb877d7f
   m_configObjects: {}
