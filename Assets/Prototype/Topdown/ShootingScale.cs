@@ -5,9 +5,10 @@ using UnityEngine;
 namespace Prototype.Topdown{
 	public class ShootingScale : MonoBehaviour{
 		[SerializeField] private List<GameObject> scales;
-		[SerializeField] private GameObject target;
+		[SerializeField] public Transform target;
 
 
+		
 		private GameObject GetCloseScale(){
 			float minDot = 0;
 			GameObject closeScale = null;
@@ -21,12 +22,12 @@ namespace Prototype.Topdown{
 		}
 
 		private void OnDrawGizmos(){
-			if(!target) return;
+			if(!target || !Application.isPlaying) return;
 			Gizmos.color = Color.green;
-			Gizmos.DrawLine(transform.position, target.transform.position);
+			Gizmos.DrawLine(transform.position, target.position);
 			Gizmos.color = Color.red;
 			var closeScale = GetCloseScale();
-			Gizmos.DrawLine(closeScale.transform.position , target.transform.position);
+			Gizmos.DrawLine(closeScale.transform.position , target.position);
 		}
 	}
 }
