@@ -43,7 +43,7 @@ namespace Prototype.Topdown{
 		private void Shoot(Vector3 direction){
 			var bulletClone = Instantiate(scaleBullet, transform.position + direction * fireRange, Quaternion.identity);
 			bulletClone.transform.up = direction;
-			bulletClone.GetComponent<Rigidbody2D>().AddForce(direction * 30, ForceMode2D.Impulse);
+			bulletClone.GetComponent<Rigidbody2D>().AddForce(direction * 10, ForceMode2D.Impulse);
 		}
 
 		private Vector3 GetMouseDirection(){
@@ -52,6 +52,7 @@ namespace Prototype.Topdown{
 			var mouseWorldPosition = _mainCamera.ScreenToWorldPoint(mousePosition);
 			var direction = (transform.position - mouseWorldPosition).normalized;
 			direction.z = 0;
+			direction = direction.normalized;
 			return direction;
 		}
 
